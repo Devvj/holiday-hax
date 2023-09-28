@@ -1,0 +1,172 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_azure-20openai-20service-5f70abe673bb7d760e-5f4ed46c206eabbe01": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "cr961_sharedazure20openai20service5f70abe673bb7d760e5f4ed46c206eabbe01_1be92"
+        },
+        "api": {
+          "name": "shared_azure-20openai-20service-5f70abe673bb7d760e-5f4ed46c206eabbe01",
+          "logicalName": "cr961_azure-20openai-20service"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "4d8581d9-dd2b-40da-b749-97bfc8b63346"
+          },
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "Input",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Azure_OpenAI_-_Generate_Rime": {
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "fe5b9291-3a59-40fa-a15a-556977a5eb3e"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "",
+              "connectionName": "shared_azure-20openai-20service-5f70abe673bb7d760e-5f4ed46c206eabbe01",
+              "operationId": "Azure OpenAI Hack"
+            },
+            "parameters": {
+              "api-version": "2023-07-01-preview",
+              "Content-Type": "application/json",
+              "body/messages": [
+                {
+                  "role": "user",
+                  "content": "Can you give me a christmas gift rime about \"@{triggerBody()['text']}\" in one sentence without naming the product, make sure it rimes well "
+                }
+              ]
+            },
+            "authentication": {
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']",
+              "type": "Raw"
+            }
+          }
+        },
+        "Apply_to_each": {
+          "foreach": "@outputs('Azure_OpenAI_-_Generate_Rime')?['body/choices']",
+          "actions": {
+            "Compose": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "e7db5285-30ff-4c92-931b-112ca2efa776"
+              },
+              "type": "Compose",
+              "inputs": "@items('Apply_to_each')?['message/content']"
+            },
+            "Set_variable": {
+              "runAfter": {
+                "Compose": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "7ed04259-eae0-4e84-be64-3326e109622d"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "Response",
+                "value": "@{outputs('Compose')}"
+              }
+            }
+          },
+          "runAfter": {
+            "Azure_OpenAI_-_Generate_Rime": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d78357b1-333b-41b1-8485-624a3817e991"
+          },
+          "type": "Foreach"
+        },
+        "Respond_to_a_PowerApp_or_flow": {
+          "runAfter": {
+            "Apply_to_each": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "96335788-5622-4798-9762-d4f5abc5f3b0"
+          },
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "response": "@variables('Response')"
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "response": {
+                  "title": "response",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "Initialize_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "ad5cbc2e-354f-4dfd-8209-cf01a4461143"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Response",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

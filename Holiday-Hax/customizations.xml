@@ -1,0 +1,122 @@
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Entities></Entities>
+  <Roles></Roles>
+  <Workflows>
+    <Workflow WorkflowId="{279da70a-405e-ee11-be6f-000d3a3413a7}" Name="OpenAI - Generate Rime">
+      <JsonFileName>/Workflows/OpenAI-GenerateRime-279DA70A-405E-EE11-BE6F-000D3A3413A7.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="OpenAI - Generate Rime" />
+      </LocalizedNames>
+    </Workflow>
+    <Workflow WorkflowId="{289da70a-405e-ee11-be6f-000d3a3413a7}" Name="OpenAI - Personal letter">
+      <JsonFileName>/Workflows/OpenAI-Personalletter-289DA70A-405E-EE11-BE6F-000D3A3413A7.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="OpenAI - Personal letter" />
+      </LocalizedNames>
+    </Workflow>
+  </Workflows>
+  <FieldSecurityProfiles></FieldSecurityProfiles>
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <EntityDataProviders />
+  <CanvasApps>
+    <CanvasApp>
+      <Name>cr961_hack_9eee6</Name>
+      <AppVersion>2023-09-22T11:20:44Z</AppVersion>
+      <Status>Ready</Status>
+      <CreatedByClientVersion>3.23091.14.0</CreatedByClientVersion>
+      <MinClientVersion>3.23091.14.0</MinClientVersion>
+      <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"false","publisherVersion":"3.23091.14","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20230922T112044Z-3.23091.14.0"}</Tags>
+      <IsCdsUpgraded>0</IsCdsUpgraded>
+      <GalleryItemId xsi:nil="true"></GalleryItemId>
+      <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+      <DisplayName>Hack</DisplayName>
+      <Description xsi:nil="true"></Description>
+      <CommitMessage xsi:nil="true"></CommitMessage>
+      <Publisher xsi:nil="true"></Publisher>
+      <AuthorizationReferences>[]</AuthorizationReferences>
+      <ConnectionReferences>{"6341a82f-bdbd-43bc-b03e-c585628cf720":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1653/1.0.1653.3403/logicflows/icon.png","dataSources":["OpenAI"],"dependencies":["3fa38b3b-018e-4432-a0e9-020aba44c45d"],"dependents":[],"parameterHints":{"workflowName":{"value":"4d553d07-ed5f-4ff2-ab64-18fdb637afe2"},"workflowEntityId":{},"3fa38b3b-018e-4432-a0e9-020aba44c45d":{"value":"shared_azure-20openai-20service-5f70abe673bb7d760e-5f4ed46c206eabbe01"}},"parameterHintsV2":{"workflowName":{"value":"4d553d07-ed5f-4ff2-ab64-18fdb637afe2"},"workflowEntityId":{},"shared_azure-20openai-20service-5f70abe673bb7d760e-5f4ed46c206eabbe01":{"value":"3fa38b3b-018e-4432-a0e9-020aba44c45d"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"],"isCustomApiSolutionAware":false},"3fa38b3b-018e-4432-a0e9-020aba44c45d":{"id":"/providers/microsoft.powerapps/apis/shared_azure-20openai-20service-5f70abe673bb7d760e-5f4ed46c206eabbe01","displayName":"Azure OpenAI Service","iconUri":"https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png","dataSources":[],"dependencies":[],"dependents":["6341a82f-bdbd-43bc-b03e-c585628cf720"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","customApiLogicalName":"cr961_azure-20openai-20service","isCustomApiSolutionAware":true}}</ConnectionReferences>
+      <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Contacts":{"entitySetName":"contacts","logicalName":"contact"},"43b0dc67-68af-47ae-9a9c-9e69d396ba3e":{"entitySetName":"msdyn_aimodels","logicalName":"msdyn_aimodel"},"aaecc619-18c9-476b-9b00-1226535c6d87":{"entitySetName":"organizations","logicalName":"organization"},"Accounts":{"entitySetName":"accounts","logicalName":"account"}}}}</DatabaseReferences>
+      <AppComponents>[]</AppComponents>
+      <AppComponentDependencies>[]</AppComponentDependencies>
+      <CanConsumeAppPass>1</CanConsumeAppPass>
+      <CanvasAppType>0</CanvasAppType>
+      <BypassConsent>0</BypassConsent>
+      <AdminControlBypassConsent>0</AdminControlBypassConsent>
+      <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <CdsDependencies>{"cdsdependencies":[{"logicalname":"cr961_azure-20openai-20service","componenttype":372,"componenttypeplatformname":"connector"},{"logicalname":"contact","componenttype":1},{"logicalname":"msdyn_aimodel","componenttype":1},{"logicalname":"organization","componenttype":1},{"logicalname":"account","componenttype":1}]}</CdsDependencies>
+      <IsCustomizable>1</IsCustomizable>
+      <BackgroundImageUri>/CanvasApps/cr961_hack_9eee6_BackgroundImageUri</BackgroundImageUri>
+      <DocumentUri>/CanvasApps/cr961_hack_9eee6_DocumentUri.msapp</DocumentUri>
+    </CanvasApp>
+  </CanvasApps>
+  <Connectors>
+    <Connector>
+      <connectorid>37287d7b-a279-4e4f-b56b-42756350d3d6</connectorid>
+      <description></description>
+      <displayname>Azure OpenAI Service</displayname>
+      <iconbrandcolor>#007ee5</iconbrandcolor>
+      <name>cr961_azure-20openai-20service</name>
+      <connectortype>1</connectortype>
+      <openapidefinition>/Connector/cr961_azure-20openai-20service_openapidefinition.json</openapidefinition>
+      <connectionparameters>/Connector/cr961_azure-20openai-20service_connectionparameters.json</connectionparameters>
+      <policytemplateinstances>/Connector/cr961_azure-20openai-20service_policytemplateinstances.json</policytemplateinstances>
+      <iconblob>/Connector/cr961_azure-20openai-20service_iconblob.Png</iconblob>
+    </Connector>
+  </Connectors>
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="cr961_sharedazure20openai20service5f70abe673bb7d760e5f4ed46c206eabbe01_1be92">
+      <connectionreferencedisplayname>Azure OpenAI Service Hack-1be92</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_azure-20openai-20service-5f70abe673bb7d760e-5f4ed46c206eabbe01</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>
